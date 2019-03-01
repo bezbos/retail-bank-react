@@ -14,7 +14,7 @@ export async function updateAddress(address){
 }
 
 export async function deleteAddress(id){
-    return await http.put(apiUrl + apiVersion + "/address/" + id);
+    return await http.delete(apiUrl + apiVersion + "/address/" + id);
 }
 
 export default {

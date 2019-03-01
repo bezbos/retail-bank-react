@@ -14,7 +14,7 @@ export async function updateBank(bank){
 }
 
 export async function deleteBank(id){
-    return await http.put(apiUrl + apiVersion + "/bank/" + id);
+    return await http.delete(apiUrl + apiVersion + "/bank/" + id);
 }
 
 export default {
