@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e96d38f4-0363-4c46-b576-551f66597a22" name="Default Changelist" comment="Created a temporary &quot;banks&quot; component to check if everything works correctly, created a service for handling HTTP requests, created &quot;bankService&quot; to handle bank specific HTTP requests, created &quot;config.json&quot;, updated &quot;.gitignore&quot;.">
-      <change afterPath="$PROJECT_DIR$/src/services/domain/bankAccountService.js" afterDir="false" />
+    <list default="true" id="e96d38f4-0363-4c46-b576-551f66597a22" name="Default Changelist" comment="Created &quot;bankAccountService.js&quot;, fixed a typo in domain services.">
+      <change afterPath="$PROJECT_DIR$/src/services/domain/branchService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/domain/addressService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/domain/addressService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/domain/bankService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/domain/bankService.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,14 +43,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/domain/bankAccountService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="323">
+              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/domain/branchService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -75,7 +95,6 @@
         <option value="$PROJECT_DIR$/src/serviceWorker.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/services/httpService.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/config.json" />
         <option value="$PROJECT_DIR$/src/services/data/bankService.js" />
@@ -83,6 +102,8 @@
         <option value="$PROJECT_DIR$/src/services/domain/bankAccountService.js" />
         <option value="$PROJECT_DIR$/src/services/domain/addressService.js" />
         <option value="$PROJECT_DIR$/src/services/domain/bankService.js" />
+        <option value="$PROJECT_DIR$/src/services/domain/branchService.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -179,7 +200,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551433952294</updated>
-      <workItem from="1551433953669" duration="6567000" />
+      <workItem from="1551433953669" duration="7505000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1551434331828</created>
@@ -202,11 +223,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551456542679</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created &quot;bankAccountService.js&quot;, fixed a typo in domain services.">
+      <created>1551456733084</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551456733084</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6567000" />
+    <option name="totallyTimeSpent" value="7505000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="40" width="1294" height="1047" extended-state="0" />
@@ -241,7 +269,8 @@
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Created a temporary &quot;banks&quot; component to check if everything works correctly, created a service for handling HTTP requests, created &quot;bankService&quot; to handle bank specific HTTP requests, created &quot;config.json&quot;, updated &quot;.gitignore&quot;." />
     <MESSAGE value="Created &quot;addressService.js&quot; for handling address specific HTTP requests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created &quot;addressService.js&quot; for handling address specific HTTP requests." />
+    <MESSAGE value="Created &quot;bankAccountService.js&quot;, fixed a typo in domain services." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created &quot;bankAccountService.js&quot;, fixed a typo in domain services." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
@@ -256,13 +285,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -332,16 +354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/domain/addressService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/domain/bankService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -352,13 +364,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/domain/bankAccountService.js">
+    <entry file="file://$PROJECT_DIR$/src/services/domain/addressService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="272">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/domain/bankAccountService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/domain/branchService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
         </state>
       </provider>
     </entry>
