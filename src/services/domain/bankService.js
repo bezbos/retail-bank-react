@@ -5,6 +5,14 @@ export async function getBanksRange(pageIndex = 0){
     return await http.get(apiUrl + apiVersion + "/banks/" + pageIndex);
 }
 
+export async function getBank(id){
+    return await http.get(apiUrl + apiVersion + "/bank/" + id);
+}
+
+export async function getBankByDetails(details){
+    return await http.get(apiUrl + apiVersion + "/bank?details=" + details);
+}
+
 export async function addBank(bank){
     return await http.post(apiUrl + apiVersion + "/bank", bank);
 }
@@ -19,6 +27,8 @@ export async function deleteBank(id){
 
 export default {
     getBanksRange,
+    getBank,
+    getBankByDetails,
     addBank,
     updateBank,
     deleteBank
