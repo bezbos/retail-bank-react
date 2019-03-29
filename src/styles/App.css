@@ -1,0 +1,49 @@
+/*
+    license: <http://www.apache.org/licenses/LICENSE-2.0>
+    author: Boško Bezik <buddhacatmonk@gmail.com>
+*/
+
+@import url("spinner.css");
+@import url("fade-in.css");
+
+.clickable:hover{
+    cursor: pointer;
+}
+
+.center
+{
+    margin:25% auto;
+    width:50%;
+    text-align: center;
+    padding: 10px;
+}
+
+.ul-disable:hover{
+    text-decoration: none;
+}
+
+.navbar{
+    margin-bottom: 1.5em;
+}
+
+.form-group, .react__select{
+    width: 65%;
+}
+
+.react__select{
+    padding-bottom: 1rem;
+}
+
+.pagination-center{
+    padding-left: 35%;
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
+.carousel-caption > h3,
+.carousel-caption > p,
+.carousel-caption > .li{
+    text-shadow: 2px 2px 4px #232323 ;
+}
