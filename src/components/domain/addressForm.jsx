@@ -40,6 +40,7 @@ class AddressForm extends Component {
             this.setState({address})
         }
     }
+
     //endregion
 
     //region Event Handlers
@@ -68,6 +69,7 @@ class AddressForm extends Component {
 
         this.setState({address});
     };
+
     //endregion
 
     render() {

@@ -39,7 +39,9 @@ class LoginForm extends Component {
             <React.Fragment>
                 <Card title="Login form">
                     <form onSubmit={this.handleSubmit}>
-                        <SocialLogin />
+                        <SocialLogin/>
+                        <br/>
+                        <h5>Local sign in</h5>
                         <Input
                             label="Email"
                             value={this.state.user.email}

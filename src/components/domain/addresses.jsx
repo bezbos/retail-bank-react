@@ -34,6 +34,7 @@ class Addresses extends Component {
         await this.getAddressesRangeAndUpdateState()
             .catch(ex => exceptions.showHttpException(ex));
     }
+
     //endregion
 
     //region Event Handlers
@@ -117,6 +118,7 @@ class Addresses extends Component {
             })
         );
     };
+
     //endregion
 
     render() {
@@ -131,7 +133,7 @@ class Addresses extends Component {
                         title={`Addresses table (${decoratedAddresses.length} ${decoratedAddresses.length === 1 ? "entry" : "entries"})`}>
                         {isAdmin && <Link className="btn btn-primary mb-3" to={`/address/new`}>Create new</Link>}
                         <Table
-                            columnNames={["ID", "Line 1", "Line 2", "Zip Postcode", "State Province Country", "Country", "Other Details", isAdmin ? "Action":""]}
+                            columnNames={["ID", "Line 1", "Line 2", "Zip Postcode", "State Province Country", "Country", "Other Details", isAdmin ? "Action" : ""]}
                             rows={decoratedAddresses}
                         />
                         <Pagination

@@ -28,6 +28,8 @@ class OAuth2RedirectHandler extends Component {
         const jwtToken = this.getUrlParameter("token");
         const error = this.getUrlParameter("error");
 
+        console.log("OAuth2RedirectHandler.render: ", jwtToken);
+
         if (jwtToken) {
             authService.oauthLogin(jwtToken);
             window.location = "/";

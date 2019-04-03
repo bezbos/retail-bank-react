@@ -71,10 +71,10 @@ class Customers extends Component {
         return this.state.customers.map(({id, address, branch, personalDetails, contactDetails}) => ({
                 id,
                 address: isAdmin
-                    ?<Link className="ul-disable" to={`/address/${address.id}`}>{address.line1}</Link>
-            :address.line1,
+                    ? <Link className="ul-disable" to={`/address/${address.id}`}>{address.line1}</Link>
+                    : address.line1,
                 branch: isAdmin ? <Link className="ul-disable" to={`/branch/${branch.id}`}>{branch.details}</Link>
-            :branch.details,
+                    : branch.details,
                 personalDetails,
                 contactDetails,
                 formLink: isAdmin && <Link className="btn btn-sm btn-outline-primary" to={`/customer/${id}`}>Open</Link>

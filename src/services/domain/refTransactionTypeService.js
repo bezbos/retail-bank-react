@@ -1,15 +1,15 @@
+import {apiUrl, apiVersion} from "../../config.json";
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import http from "../httpService";
-import {apiUrl, apiVersion} from "../../config.json";
 
 /**
  * Retrieves all transaction types from an API endpoint.
  * @returns {Promise<*>}
  */
-export async function getRefTransactionTypes(){
+export async function getRefTransactionTypes() {
     return await http.get(apiUrl + apiVersion + "/refTransactionTypes/");
 }
 
@@ -18,7 +18,7 @@ export async function getRefTransactionTypes(){
  * @param id - Id of the transaction type we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getRefTransactionType(id){
+export async function getRefTransactionType(id) {
     return await http.get(apiUrl + apiVersion + "/refTransactionType/" + id);
 }
 
@@ -27,7 +27,7 @@ export async function getRefTransactionType(id){
  * @param code - Code of the transaction type we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getRefTransactionTypeByDetails(code){
+export async function getRefTransactionTypeByDetails(code) {
     return await http.get(apiUrl + apiVersion + "/refTransactionType?code=" + code);
 }
 
@@ -36,7 +36,7 @@ export async function getRefTransactionTypeByDetails(code){
  * @param refTransactionType - Transaction type we want to add.
  * @returns {Promise<*>}
  */
-export async function addRefTransactionType(refTransactionType){
+export async function addRefTransactionType(refTransactionType) {
     return await http.post(apiUrl + apiVersion + "/refTransactionType", refTransactionType);
 }
 
@@ -45,7 +45,7 @@ export async function addRefTransactionType(refTransactionType){
  * @param refTransactionType - Transaction type we want to update.
  * @returns {Promise<*>}
  */
-export async function updateRefTransactionType(refTransactionType){
+export async function updateRefTransactionType(refTransactionType) {
     return await http.put(apiUrl + apiVersion + "/refTransactionType", refTransactionType);
 }
 
@@ -54,7 +54,7 @@ export async function updateRefTransactionType(refTransactionType){
  * @param id - Id of the transaction type we want to delete.
  * @returns {Promise<*>}
  */
-export async function deleteRefTransactionType(id){
+export async function deleteRefTransactionType(id) {
     return await http.delete(apiUrl + apiVersion + "/refTransactionType/" + id);
 }
 

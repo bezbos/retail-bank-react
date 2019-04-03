@@ -31,6 +31,7 @@ class BankForm extends Component {
             this.setState({bank})
         }
     }
+
     //endregion
 
     //region Event Handlers
@@ -59,6 +60,7 @@ class BankForm extends Component {
 
         this.setState({bank});
     };
+
     //endregion
 
     render() {

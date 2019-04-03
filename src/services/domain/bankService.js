@@ -1,16 +1,16 @@
+import {apiUrl, apiVersion} from "../../config.json";
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import http from "../httpService";
-import {apiUrl, apiVersion} from "../../config.json";
 
 /**
  * Retrieves a range of banks from an API endpoint.
  * @param pageIndex - Default value is 0.
  * @returns {Promise<*>}
  */
-export async function getBanksRange(pageIndex = 0){
+export async function getBanksRange(pageIndex = 0) {
     return await http.get(apiUrl + apiVersion + "/banks/" + pageIndex);
 }
 
@@ -19,7 +19,7 @@ export async function getBanksRange(pageIndex = 0){
  * @param id - Id of the bank we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getBank(id){
+export async function getBank(id) {
     return await http.get(apiUrl + apiVersion + "/bank/" + id);
 }
 
@@ -28,7 +28,7 @@ export async function getBank(id){
  * @param details - Details of the bank we want to retrieve
  * @returns {Promise<*>}
  */
-export async function getBankByDetails(details){
+export async function getBankByDetails(details) {
     return await http.get(apiUrl + apiVersion + "/bank?details=" + details);
 }
 
@@ -37,7 +37,7 @@ export async function getBankByDetails(details){
  * @param details - Substring that we check for in a <code>details</code> string.
  * @returns {Promise<*>}
  */
-export async function getBanksByDetails(details){
+export async function getBanksByDetails(details) {
     return await http.get(apiUrl + apiVersion + "/banks?details=" + details);
 }
 
@@ -46,7 +46,7 @@ export async function getBanksByDetails(details){
  * @param bank - Bank we want to add.
  * @returns {Promise<*>}
  */
-export async function addBank(bank){
+export async function addBank(bank) {
     return await http.post(apiUrl + apiVersion + "/bank", bank);
 }
 
@@ -55,7 +55,7 @@ export async function addBank(bank){
  * @param bank - Bank we want to update.
  * @returns {Promise<*>}
  */
-export async function updateBank(bank){
+export async function updateBank(bank) {
     return await http.put(apiUrl + apiVersion + "/bank", bank);
 }
 
@@ -64,7 +64,7 @@ export async function updateBank(bank){
  * @param id - Id of the bank we want to delete.
  * @returns {Promise<*>}
  */
-export async function deleteBank(id){
+export async function deleteBank(id) {
     return await http.delete(apiUrl + apiVersion + "/bank/" + id);
 }
 

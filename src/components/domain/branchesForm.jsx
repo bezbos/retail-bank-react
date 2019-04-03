@@ -84,7 +84,6 @@ class BranchesForm extends Component {
         this.setState({branch});
     };
 
-
     handleSelectChange = ({value, label}, {name: inputName}) => {
         const branch = {...this.state.branch};
 

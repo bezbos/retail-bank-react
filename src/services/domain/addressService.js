@@ -1,16 +1,16 @@
+import {apiUrl, apiVersion} from "../../config.json";
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import http from "../httpService";
-import {apiUrl, apiVersion} from "../../config.json";
 
 /**
  * Retrieves a range of addresses from an API endpoint.
  * @param pageIndex - Default value is 0.
  * @returns {Promise<*>}
  */
-export async function getAddressesRange(pageIndex = 0){
+export async function getAddressesRange(pageIndex = 0) {
     return await http.get(apiUrl + apiVersion + "/addresses/" + pageIndex);
 }
 
@@ -19,7 +19,7 @@ export async function getAddressesRange(pageIndex = 0){
  * @param id - Id of the address we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getAddress(id){
+export async function getAddress(id) {
     return await http.get(apiUrl + apiVersion + "/address/" + id);
 }
 
@@ -28,7 +28,7 @@ export async function getAddress(id){
  * @param line1 - line1 of the address we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getAddressByLine1(line1){
+export async function getAddressByLine1(line1) {
     return await http.get(apiUrl + apiVersion + "/address?line1=" + line1);
 }
 
@@ -37,7 +37,7 @@ export async function getAddressByLine1(line1){
  * @param line1 - Substring that we check for in a <code>line1</code> string.
  * @returns {Promise<*>}
  */
-export async function getAddressesByLine1(line1){
+export async function getAddressesByLine1(line1) {
     return await http.get(apiUrl + apiVersion + "/addresses?line1=" + line1);
 }
 
@@ -46,7 +46,7 @@ export async function getAddressesByLine1(line1){
  * @param address - Address we want to add.
  * @returns {Promise<*>}
  */
-export async function addAddress(address){
+export async function addAddress(address) {
     return await http.post(apiUrl + apiVersion + "/address", address);
 }
 
@@ -55,7 +55,7 @@ export async function addAddress(address){
  * @param address - Address we want to update.
  * @returns {Promise<*>}
  */
-export async function updateAddress(address){
+export async function updateAddress(address) {
     return await http.put(apiUrl + apiVersion + "/address", address);
 }
 
@@ -64,7 +64,7 @@ export async function updateAddress(address){
  * @param id - Id of the address we want to delete.
  * @returns {Promise<*>}
  */
-export async function deleteAddress(id){
+export async function deleteAddress(id) {
     return await http.delete(apiUrl + apiVersion + "/address/" + id);
 }
 

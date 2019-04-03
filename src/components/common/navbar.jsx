@@ -21,7 +21,7 @@ import {NavLink} from "react-router-dom";
 class Navbar extends Component {
     render() {
         const {user} = this.props;
-        console.log(user);
+
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <NavLink className="navbar-brand" to="/">Retailbank</NavLink>

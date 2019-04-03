@@ -141,7 +141,8 @@ class Homepage extends Component {
                 <footer className="pt-4 my-md-5 pt-md-5 border-top">
                     <div className="row">
                         <div className="col-12 col-md">
-                            <small className="d-block mb-3 text-muted">© Boško Bezik - {new Date().getFullYear()}</small>
+                            <small className="d-block mb-3 text-muted">© Boško Bezik
+                                - {new Date().getFullYear()}</small>
                         </div>
                         <div className="col-6 col-md">
                             <h5>Banking</h5>
@@ -170,7 +171,8 @@ class Homepage extends Component {
                             <h5>Credit Cards</h5>
                             <ul className="list-unstyled text-small">
                                 <li>
-                                    <button className="btn ml-n2 btn-sm btn-link text-muted">Compare Credit Cards</button>
+                                    <button className="btn ml-n2 btn-sm btn-link text-muted">Compare Credit Cards
+                                    </button>
                                 </li>
                                 <li>
                                     <button className="btn ml-n2 btn-sm btn-link text-muted">Cash Back Card</button>

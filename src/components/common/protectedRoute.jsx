@@ -10,7 +10,7 @@ class ProtectedRoute extends Component {
             <Route
                 {...args}
                 render={(props) => authService.getCurrentUser()
-                    ? Component ?  <Component {...props}/> : render(props)
+                    ? Component ? <Component {...props}/> : render(props)
                     : <Redirect to="/login"/>
                 }
             />

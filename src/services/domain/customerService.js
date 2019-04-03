@@ -1,16 +1,16 @@
+import {apiUrl, apiVersion} from "../../config.json";
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import http from "../httpService";
-import {apiUrl, apiVersion} from "../../config.json";
 
 /**
  * Retrieves a range of customers from an API endpoint.
  * @param pageIndex - Default value is 0.
  * @returns {Promise<*>}
  */
-export async function getCustomersRange(pageIndex = 0){
+export async function getCustomersRange(pageIndex = 0) {
     return await http.get(apiUrl + apiVersion + "/customers/" + pageIndex);
 }
 
@@ -19,7 +19,7 @@ export async function getCustomersRange(pageIndex = 0){
  * @param id - Id of the customer we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getCustomer(id){
+export async function getCustomer(id) {
     return await http.get(apiUrl + apiVersion + "/customer/" + id);
 }
 
@@ -28,7 +28,7 @@ export async function getCustomer(id){
  * @param personalDetails - Personal details of the customer we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getCustomerByPersonalDetails(personalDetails){
+export async function getCustomerByPersonalDetails(personalDetails) {
     return await http.get(apiUrl + apiVersion + "/customer?personalDetails=" + personalDetails);
 }
 
@@ -37,7 +37,7 @@ export async function getCustomerByPersonalDetails(personalDetails){
  * @param personalDetails - Substring that we check for in a <code>personalDetails</code> string.
  * @returns {Promise<*>}
  */
-export async function getCustomersByPersonalDetails(personalDetails){
+export async function getCustomersByPersonalDetails(personalDetails) {
     return await http.get(apiUrl + apiVersion + "/customers?personalDetails=" + personalDetails);
 }
 
@@ -46,7 +46,7 @@ export async function getCustomersByPersonalDetails(personalDetails){
  * @param customer - Customer we want to add.
  * @returns {Promise<*>}
  */
-export async function addCustomer(customer){
+export async function addCustomer(customer) {
     return await http.post(apiUrl + apiVersion + "/customer", customer);
 }
 
@@ -55,7 +55,7 @@ export async function addCustomer(customer){
  * @param customer - Customer we want to update.
  * @returns {Promise<*>}
  */
-export async function updateCustomer(customer){
+export async function updateCustomer(customer) {
     return await http.put(apiUrl + apiVersion + "/customer", customer);
 }
 
@@ -64,7 +64,7 @@ export async function updateCustomer(customer){
  * @param id - Id of the customer we want to delete.
  * @returns {Promise<*>}
  */
-export async function deleteCustomer(id){
+export async function deleteCustomer(id) {
     return await http.delete(apiUrl + apiVersion + "/customer/" + id);
 }
 

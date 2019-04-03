@@ -17,6 +17,6 @@ export function firstToLowerCase(str) {
  * @param str - String that will have it's whitespaces removed.
  * @returns {string}
  */
-export function removeWhitespace(str){
-    return str.replace(/\s/g,'');
+export function removeWhitespace(str) {
+    return str.replace(/\s/g, '');
 }

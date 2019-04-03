@@ -1,16 +1,16 @@
+import {apiUrl, apiVersion} from "../../config.json";
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import http from "../httpService";
-import {apiUrl, apiVersion} from "../../config.json";
 
 /**
  * Retrieves a range of merchants from an API endpoint.
  * @param pageIndex - Default value is 0.
  * @returns {Promise<*>}
  */
-export async function getMerchantsRange(pageIndex = 0){
+export async function getMerchantsRange(pageIndex = 0) {
     return await http.get(apiUrl + apiVersion + "/merchants/" + pageIndex);
 }
 
@@ -19,7 +19,7 @@ export async function getMerchantsRange(pageIndex = 0){
  * @param id - Id of the merchant we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getMerchant(id){
+export async function getMerchant(id) {
     return await http.get(apiUrl + apiVersion + "/merchant/" + id);
 }
 
@@ -28,7 +28,7 @@ export async function getMerchant(id){
  * @param details - Id of the merchant we want to retrieve.
  * @returns {Promise<*>}
  */
-export async function getMerchantByDetails(details){
+export async function getMerchantByDetails(details) {
     return await http.get(apiUrl + apiVersion + "/merchant?details=" + details);
 }
 
@@ -37,7 +37,7 @@ export async function getMerchantByDetails(details){
  * @param details - Substring that we check for in a <code>details</code> string.
  * @returns {Promise<*>}
  */
-export async function getMerchantsByDetails(details){
+export async function getMerchantsByDetails(details) {
     return await http.get(apiUrl + apiVersion + "/merchants?details=" + details);
 }
 
@@ -46,7 +46,7 @@ export async function getMerchantsByDetails(details){
  * @param merchant - Merchant we want to add.
  * @returns {Promise<*>}
  */
-export async function addMerchant(merchant){
+export async function addMerchant(merchant) {
     return await http.post(apiUrl + apiVersion + "/merchant", merchant);
 }
 
@@ -55,7 +55,7 @@ export async function addMerchant(merchant){
  * @param merchant - Merchant we want to update.
  * @returns {Promise<*>}
  */
-export async function updateMerchant(merchant){
+export async function updateMerchant(merchant) {
     return await http.put(apiUrl + apiVersion + "/merchant", merchant);
 }
 
@@ -64,7 +64,7 @@ export async function updateMerchant(merchant){
  * @param id - Id of the merchant we want to delete.
  * @returns {Promise<*>}
  */
-export async function deleteMerchant(id){
+export async function deleteMerchant(id) {
     return await http.delete(apiUrl + apiVersion + "/merchant/" + id);
 }
 
@@ -72,6 +72,7 @@ export default {
     getMerchantsRange,
     getMerchant,
     getMerchantByDetails,
+    getMerchantsByDetails,
     addMerchant,
     updateMerchant,
     deleteMerchant

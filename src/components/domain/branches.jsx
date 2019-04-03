@@ -32,6 +32,7 @@ class Branches extends Component {
     async componentDidMount() {
         await this.getBranchesRangeAndUpdateState();
     }
+
     //endregion
 
     //region Event Handlers
@@ -119,6 +120,7 @@ class Branches extends Component {
             })
         );
     };
+
     //endregion
 
     render() {
@@ -133,7 +135,7 @@ class Branches extends Component {
                         title={`Branches table (${decoratedBranches.length} ${decoratedBranches.length === 1 ? "entry" : "entries"})`}>
                         {isAdmin && <Link className="btn btn-primary mb-3" to={`/branch/new`}>Create new</Link>}
                         <Table
-                            columnNames={["ID", "Details", "Address", "Bank", "Type", isAdmin ? "Action": ""]}
+                            columnNames={["ID", "Details", "Address", "Bank", "Type", isAdmin ? "Action" : ""]}
                             rows={decoratedBranches}
                         />
                         <Pagination

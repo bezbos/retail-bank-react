@@ -66,9 +66,10 @@ class Transactions extends Component {
      * Essentially it decorates existing data with components and adds event handlers.
      */
     getDecoratedTransactions = () => {
-        return this.state.transactions.map(({id, account, merchant, type, date, amount, details}) => ({
+        return this.state.transactions.map(({id, senderAccount, receiverAccount, merchant, type, date, amount, details}) => ({
                 id,
-                account: <Link className="ul-disable" to={`/bankAccount/${account.id}`}>{account.details}</Link>,
+                senderAccount: <Link className="ul-disable" to={`/bankAccount/${senderAccount.id}`}>Sender</Link>,
+                receiverAccount: <Link className="ul-disable" to={`/bankAccount/${receiverAccount.id}`}>Receiver</Link>,
                 merchant: merchant.details,
                 type: type.code,
                 date,
@@ -89,8 +90,9 @@ class Transactions extends Component {
                 <div className="col-12">
                     <Card
                         title={`Transactions table (${decoratedTransactions.length} ${decoratedTransactions.length === 1 ? "entry" : "entries"})`}>
+                        <Link className="btn btn-primary mb-3" to={`/transaction/new`}>Create payment</Link>
                         <Table
-                            columnNames={["ID", "Account", "Merchant", "Type", "Date", "Amount", "Details"]}
+                            columnNames={["ID", "Sender", "Receiver", "Merchant", "Type", "Date", "Amount", "Details"]}
                             rows={decoratedTransactions}
                         />
                         <Pagination

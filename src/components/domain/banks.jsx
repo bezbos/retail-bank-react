@@ -32,6 +32,7 @@ class Banks extends Component {
     async componentDidMount() {
         await this.getBanksRangeAndUpdateState();
     }
+
     //endregion
 
     //region Event Handlers
@@ -50,7 +51,7 @@ class Banks extends Component {
                     await this.getBanksRangeAndUpdateState();
             })
             .catch(ex => {
-                exceptions.showHttpException(ex)
+                exceptions.showHttpException(ex);
                 this.setState({banks: originalBanks});
             });
     };
@@ -105,6 +106,7 @@ class Banks extends Component {
             })
         );
     };
+
     //endregion
 
     render() {
