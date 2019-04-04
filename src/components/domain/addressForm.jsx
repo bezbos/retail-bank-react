@@ -2,13 +2,12 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-
 import React, {Component} from 'react';
-import {toast} from "react-toastify";
-import addressService from "../../services/domain/addressService";
-import exceptions from "../../utils/exceptions";
-import Card from "../common/card";
-import Input from "../common/input";
+import {toast} from 'react-toastify';
+import addressService from '../../services/domain/addressService';
+import exceptions from '../../utils/exceptions';
+import Card from '../common/card';
+import Input from '../common/input';
 
 /**
  * @description Domain specific component for taking <b>Address</b> related input.
@@ -17,16 +16,16 @@ class AddressForm extends Component {
 
     //region Properties
     // We check if the query string "id" is TRUTHY and it DOESN'T match to "new" to determine if the item exists.
-    isExistingAddress = this.props.match.params["id"] && this.props.match.params["id"] !== "new";
+    isExistingAddress = this.props.match.params['id'] && this.props.match.params['id'] !== 'new';
     state = {
         address: {
-            id: "",
-            line1: "",
-            line2: "",
-            zipPostcode: "",
-            stateProvinceCountry: "",
-            country: "",
-            otherDetails: ""
+            id: '',
+            line1: '',
+            line2: '',
+            zipPostcode: '',
+            stateProvinceCountry: '',
+            country: '',
+            otherDetails: ''
         }
     };
     //endregion
@@ -36,7 +35,7 @@ class AddressForm extends Component {
         const {params} = this.props.match;
 
         if (this.isExistingAddress) {
-            const {data: address} = await addressService.getAddress(params["id"]);
+            const {data: address} = await addressService.getAddress(params['id']);
             this.setState({address})
         }
     }
@@ -56,11 +55,11 @@ class AddressForm extends Component {
             return;
         }
 
-        this.props.history.push("/addresses");
+        this.props.history.push('/addresses');
 
         this.isExistingAddress
-            ? toast.success("Updated successfully!")
-            : toast.success("Added successfully!");
+            ? toast.success('Updated successfully!')
+            : toast.success('Added successfully!');
     };
 
     handleChange = ({currentTarget: input}) => {

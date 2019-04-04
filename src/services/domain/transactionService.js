@@ -1,9 +1,9 @@
-import {apiUrl, apiVersion} from "../../config.json";
+import {apiUrl, apiVersion} from '../../config.json';
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import http from "../httpService";
+import http from '../httpService';
 
 /**
  * Retrieves a range of transactions from an API endpoint.
@@ -11,7 +11,7 @@ import http from "../httpService";
  * @returns {Promise<*>}
  */
 export async function getTransactionsRange(pageIndex = 0) {
-    return await http.get(apiUrl + apiVersion + "/transactions/" + pageIndex);
+    return await http.get(apiUrl + apiVersion + '/transactions/' + pageIndex);
 }
 
 /**
@@ -20,7 +20,7 @@ export async function getTransactionsRange(pageIndex = 0) {
  * @returns {Promise<*>}
  */
 export async function getTransaction(id) {
-    return await http.get(apiUrl + apiVersion + "/transaction/" + id);
+    return await http.get(apiUrl + apiVersion + '/transaction/' + id);
 }
 
 /**
@@ -29,7 +29,7 @@ export async function getTransaction(id) {
  * @returns {Promise<*>}
  */
 export async function getTransactionByDetails(details) {
-    return await http.get(apiUrl + apiVersion + "/transaction?details=" + details);
+    return await http.get(apiUrl + apiVersion + '/transaction?details=' + details);
 }
 
 /**
@@ -38,7 +38,7 @@ export async function getTransactionByDetails(details) {
  * @returns {Promise<*>}
  */
 export async function addTransaction(transaction) {
-    return await http.post(apiUrl + apiVersion + "/transaction", transaction);
+    return await http.post(apiUrl + apiVersion + '/transaction', transaction);
 }
 
 /**
@@ -47,7 +47,7 @@ export async function addTransaction(transaction) {
  * @returns {Promise<*>}
  */
 export async function createPayment(transaction) {
-    return await http.post(apiUrl + apiVersion + "/transaction", transaction);
+    return await http.post(apiUrl + apiVersion + '/transaction', transaction);
 }
 
 /**
@@ -56,7 +56,7 @@ export async function createPayment(transaction) {
  * @returns {Promise<*>}
  */
 export async function createWithdrawal(transaction) {
-    return await http.post(apiUrl + apiVersion + "/transaction/withdrawal", transaction);
+    return await http.post(apiUrl + apiVersion + '/transaction/withdrawal', transaction);
 }
 
 /**
@@ -65,7 +65,7 @@ export async function createWithdrawal(transaction) {
  * @returns {Promise<*>}
  */
 export async function createDeposit(transaction) {
-    return await http.post(apiUrl + apiVersion + "/transaction/deposit", transaction);
+    return await http.post(apiUrl + apiVersion + '/transaction/deposit', transaction);
 }
 
 export default {
@@ -74,5 +74,5 @@ export default {
     addTransaction,
     createPayment,
     createWithdrawal,
-    createDeposit,
+    createDeposit
 }

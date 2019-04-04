@@ -2,16 +2,16 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import _ from "lodash";
+import _ from 'lodash';
 import React, {Component} from 'react';
-import {toast} from "react-toastify";
-import addressService from "../../services/domain/addressService";
-import branchService from "../../services/domain/branchService";
-import customerService from "../../services/domain/customerService";
-import exceptions from "../../utils/exceptions";
-import AsyncSelectLabeled from "../common/asyncSelectLabeled";
-import Card from "../common/card";
-import Input from "../common/input";
+import {toast} from 'react-toastify';
+import addressService from '../../services/domain/addressService';
+import branchService from '../../services/domain/branchService';
+import customerService from '../../services/domain/customerService';
+import exceptions from '../../utils/exceptions';
+import AsyncSelectLabeled from '../common/asyncSelectLabeled';
+import Card from '../common/card';
+import Input from '../common/input';
 
 /**
  * @description Domain specific component that renders a table of
@@ -20,21 +20,21 @@ class CustomerForm extends Component {
 
     //region Properties
     // We check if the query string "id" is TRUTHY and it DOESN'T match to "new" to determine if the item exists.
-    isExistingCustomer = this.props.match.params["id"] && this.props.match.params["id"] !== "new";
+    isExistingCustomer = this.props.match.params['id'] && this.props.match.params['id'] !== 'new';
 
     state = {
         customer: {
-            id: "",
+            id: '',
             address: {
-                id: "",
-                line1: ""
+                id: '',
+                line1: ''
             },
             branch: {
-                id: "",
-                details: ""
+                id: '',
+                details: ''
             },
-            personalDetails: "",
-            contactDetails: ""
+            personalDetails: '',
+            contactDetails: ''
         },
         addresses: [],
         branches: []
@@ -66,10 +66,10 @@ class CustomerForm extends Component {
             return;
         }
 
-        this.props.history.push("/customers");
+        this.props.history.push('/customers');
         this.isExistingCustomer
-            ? toast.success("Updated successfully!")
-            : toast.success("Added successfully!");
+            ? toast.success('Updated successfully!')
+            : toast.success('Added successfully!');
     };
 
     handleChange = ({currentTarget: input}) => {
@@ -83,13 +83,13 @@ class CustomerForm extends Component {
         const customer = {...this.state.customer};
 
         switch (inputName) {
-            case "address":
-                _.set(customer, "address.id", value);
-                _.set(customer, "address.line1", label);
+            case 'address':
+                _.set(customer, 'address.id', value);
+                _.set(customer, 'address.line1', label);
                 break;
-            case "branch":
-                _.set(customer, "branch.id", value);
-                _.set(customer, "branch.details", label);
+            case 'branch':
+                _.set(customer, 'branch.id', value);
+                _.set(customer, 'branch.details', label);
                 break;
             default:
                 break;
@@ -102,8 +102,8 @@ class CustomerForm extends Component {
 
         await customerService.deleteCustomer(id)
             .then(() => {
-                this.props.history.push("/customers");
-                toast.success("Deleted successfully.");
+                this.props.history.push('/customers');
+                toast.success('Deleted successfully.');
             })
             .catch(ex => exceptions.showHttpException(ex));
     };

@@ -4,7 +4,7 @@
  */
 
 import React, {Component} from 'react';
-import TableRow from "./tableRow";
+import TableRow from './tableRow';
 
 /**
  * @description For each element in the <code>rows</code> array, a <code>&#60;tbody&#62;</code> element containing a <code>&#60;TableRow&#62;</code> component is rendered.

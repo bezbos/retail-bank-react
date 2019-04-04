@@ -1,16 +1,16 @@
-import {apiUrl, apiVersion} from "../../config.json";
+import {apiUrl, apiVersion} from '../../config.json';
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import http from "../httpService";
+import http from '../httpService';
 
 /**
  * Retrieves all account types from an API endpoint.
  * @returns {Promise<*>}
  */
 export async function getRefAccountTypes() {
-    return await http.get(apiUrl + apiVersion + "/refAccountTypes/");
+    return await http.get(apiUrl + apiVersion + '/refAccountTypes/');
 }
 
 /**
@@ -19,7 +19,7 @@ export async function getRefAccountTypes() {
  * @returns {Promise<*>}
  */
 export async function getRefAccountType(id) {
-    return await http.get(apiUrl + apiVersion + "/refAccountType/" + id);
+    return await http.get(apiUrl + apiVersion + '/refAccountType/' + id);
 }
 
 /**
@@ -28,7 +28,7 @@ export async function getRefAccountType(id) {
  * @returns {Promise<*>}
  */
 export async function getRefAccountTypeByCode(code) {
-    return await http.get(apiUrl + apiVersion + "/refAccountType?code=" + code);
+    return await http.get(apiUrl + apiVersion + '/refAccountType?code=' + code);
 }
 
 /**
@@ -37,7 +37,7 @@ export async function getRefAccountTypeByCode(code) {
  * @returns {Promise<*>}
  */
 export async function addRefAccountType(refAccountType) {
-    return await http.post(apiUrl + apiVersion + "/refAccountType", refAccountType);
+    return await http.post(apiUrl + apiVersion + '/refAccountType', refAccountType);
 }
 
 /**
@@ -46,7 +46,7 @@ export async function addRefAccountType(refAccountType) {
  * @returns {Promise<*>}
  */
 export async function updateRefAccountType(refAccountType) {
-    return await http.put(apiUrl + apiVersion + "/refAccountType", refAccountType);
+    return await http.put(apiUrl + apiVersion + '/refAccountType', refAccountType);
 }
 
 /**
@@ -55,7 +55,7 @@ export async function updateRefAccountType(refAccountType) {
  * @returns {Promise<*>}
  */
 export async function deleteRefAccountType(id) {
-    return await http.delete(apiUrl + apiVersion + "/refAccountType/" + id);
+    return await http.delete(apiUrl + apiVersion + '/refAccountType/' + id);
 }
 
 export default {

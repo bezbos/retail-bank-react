@@ -3,12 +3,12 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import transactionService from "../../services/domain/transactionService";
-import exceptions from "../../utils/exceptions";
-import Card from "../common/card";
-import Pagination from "../common/pagination";
-import Table from "../common/table";
+import {Link} from 'react-router-dom';
+import transactionService from '../../services/domain/transactionService';
+import exceptions from '../../utils/exceptions';
+import Card from '../common/card';
+import Pagination from '../common/pagination';
+import Table from '../common/table';
 
 /**
  * @description Domain specific component that renders a table of Transactions
@@ -89,10 +89,10 @@ class Transactions extends Component {
             <div className="row">
                 <div className="col-12">
                     <Card
-                        title={`Transactions table (${decoratedTransactions.length} ${decoratedTransactions.length === 1 ? "entry" : "entries"})`}>
+                        title={`Transactions table (${decoratedTransactions.length} ${decoratedTransactions.length === 1 ? 'entry' : 'entries'})`}>
                         <Link className="btn btn-primary mb-3" to={`/transaction/new`}>Create payment</Link>
                         <Table
-                            columnNames={["ID", "Sender", "Receiver", "Merchant", "Type", "Date", "Amount", "Details"]}
+                            columnNames={['ID', 'Sender', 'Receiver', 'Merchant', 'Type', 'Date', 'Amount', 'Details']}
                             rows={decoratedTransactions}
                         />
                         <Pagination

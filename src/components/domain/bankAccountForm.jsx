@@ -2,17 +2,17 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import _ from "lodash";
+import _ from 'lodash';
 import React, {Component} from 'react';
-import {toast} from "react-toastify";
-import bankAccountService from "../../services/domain/bankAccountService";
-import customerService from "../../services/domain/customerService";
-import refAccountStatusService from "../../services/domain/refAccountStatusService";
-import refAccountTypeService from "../../services/domain/refAccountTypeService";
-import exceptions from "../../utils/exceptions";
-import AsyncSelectLabeled from "../common/asyncSelectLabeled";
-import Card from "../common/card";
-import Input from "../common/input";
+import {toast} from 'react-toastify';
+import bankAccountService from '../../services/domain/bankAccountService';
+import customerService from '../../services/domain/customerService';
+import refAccountStatusService from '../../services/domain/refAccountStatusService';
+import refAccountTypeService from '../../services/domain/refAccountTypeService';
+import exceptions from '../../utils/exceptions';
+import AsyncSelectLabeled from '../common/asyncSelectLabeled';
+import Card from '../common/card';
+import Input from '../common/input';
 
 /**
  * @description Domain specific component for taking <b>Bank Account</b> related input.
@@ -21,25 +21,25 @@ class BankAccountForm extends Component {
 
     //region Properties
     // We check if the query string "id" is TRUTHY and it DOESN'T match to "new" to determine if the item exists.
-    isExistingBankAccount = this.props.match.params["id"] && this.props.match.params["id"] !== "new";
+    isExistingBankAccount = this.props.match.params['id'] && this.props.match.params['id'] !== 'new';
 
     state = {
         bankAccount: {
-            id: "",
+            id: '',
             status: {
-                id: "",
-                code: ""
+                id: '',
+                code: ''
             },
             type: {
-                id: "",
-                code: ""
+                id: '',
+                code: ''
             },
             customer: {
-                id: "",
-                personalDetails: ""
+                id: '',
+                personalDetails: ''
             },
-            balance: "",
-            details: ""
+            balance: '',
+            details: ''
         },
         addresses: [],
         banks: [],
@@ -52,7 +52,7 @@ class BankAccountForm extends Component {
         const {params} = this.props.match;
 
         if (this.isExistingBankAccount) {
-            const {data} = await bankAccountService.getBankAccount(params["id"]);
+            const {data} = await bankAccountService.getBankAccount(params['id']);
             this.setState({bankAccount: this.mapBankAccountToViewModel(data)})
         }
     }
@@ -72,10 +72,10 @@ class BankAccountForm extends Component {
             return;
         }
 
-        this.props.history.push("/bankAccounts");
+        this.props.history.push('/bankAccounts');
         this.isExistingBankAccount
-            ? toast.success("Updated successfully!")
-            : toast.success("Added successfully!");
+            ? toast.success('Updated successfully!')
+            : toast.success('Added successfully!');
     };
 
     handleChange = ({currentTarget: input}) => {
@@ -89,17 +89,17 @@ class BankAccountForm extends Component {
         const bankAccount = {...this.state.bankAccount};
 
         switch (inputName) {
-            case "status":
-                _.set(bankAccount, "status.id", value);
-                _.set(bankAccount, "status.code", label);
+            case 'status':
+                _.set(bankAccount, 'status.id', value);
+                _.set(bankAccount, 'status.code', label);
                 break;
-            case "type":
-                _.set(bankAccount, "type.id", value);
-                _.set(bankAccount, "type.code", label);
+            case 'type':
+                _.set(bankAccount, 'type.id', value);
+                _.set(bankAccount, 'type.code', label);
                 break;
-            case "customer":
-                _.set(bankAccount, "customer.id", value);
-                _.set(bankAccount, "customer.personalDetails", label);
+            case 'customer':
+                _.set(bankAccount, 'customer.id', value);
+                _.set(bankAccount, 'customer.personalDetails', label);
                 break;
             default:
                 break;
@@ -112,8 +112,8 @@ class BankAccountForm extends Component {
     handleDelete = async (id) => {
         await bankAccountService.deleteBankAccount(id)
             .then(() => {
-                toast.success("Deleted successfully.");
-                this.props.history.push("/bankAccounts");
+                toast.success('Deleted successfully.');
+                this.props.history.push('/bankAccounts');
             })
             .catch(ex => exceptions.showHttpException(ex));
     };

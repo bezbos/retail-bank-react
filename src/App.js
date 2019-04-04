@@ -3,32 +3,32 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 
-import "bootstrap/dist/css/bootstrap.css";
+import 'bootstrap/dist/css/bootstrap.css';
 import React, {Component} from 'react';
-import {Redirect, Route, Switch} from "react-router-dom";
-import {ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import LoginForm from "./components/auth/loginForm";
-import Logout from "./components/auth/logout";
-import OAuth2RedirectHandler from "./components/auth/OAuth2RedirectHandler";
-import RegistrationForm from "./components/auth/registrationForm";
-import Navbar from "./components/common/navbar";
-import NotFound from "./components/common/notFound";
-import ProtectedRoute from "./components/common/protectedRoute";
-import Addresses from "./components/domain/addresses";
-import AddressForm from "./components/domain/addressForm";
-import BankAccountForm from "./components/domain/bankAccountForm";
-import BankAccounts from "./components/domain/bankAccounts";
-import BankForm from "./components/domain/bankForm";
-import Banks from "./components/domain/banks";
-import Branches from "./components/domain/branches";
-import BranchesForm from "./components/domain/branchesForm";
-import CustomerForm from "./components/domain/customerForm";
-import Customers from "./components/domain/customers";
-import Homepage from "./components/domain/homepage";
-import TransactionForm from "./components/domain/transactionForm";
-import Transactions from "./components/domain/transactions";
-import authService from "./services/authService";
+import {Redirect, Route, Switch} from 'react-router-dom';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoginForm from './components/auth/loginForm';
+import Logout from './components/auth/logout';
+import OAuth2RedirectHandler from './components/auth/OAuth2RedirectHandler';
+import RegistrationForm from './components/auth/registrationForm';
+import Navbar from './components/common/navbar';
+import NotFound from './components/common/notFound';
+import ProtectedRoute from './components/common/protectedRoute';
+import Addresses from './components/domain/addresses';
+import AddressForm from './components/domain/addressForm';
+import BankAccountForm from './components/domain/bankAccountForm';
+import BankAccounts from './components/domain/bankAccounts';
+import BankForm from './components/domain/bankForm';
+import Banks from './components/domain/banks';
+import Branches from './components/domain/branches';
+import BranchesForm from './components/domain/branchesForm';
+import CustomerForm from './components/domain/customerForm';
+import Customers from './components/domain/customers';
+import Homepage from './components/domain/homepage';
+import TransactionForm from './components/domain/transactionForm';
+import Transactions from './components/domain/transactions';
+import authService from './services/authService';
 import './styles/App.css';
 
 class App extends Component {

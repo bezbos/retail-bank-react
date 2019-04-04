@@ -4,8 +4,8 @@
  */
 
 import React, {Component} from 'react';
-import TableBody from "./tableBody";
-import TableHead from "./tableHead";
+import TableBody from './tableBody';
+import TableHead from './tableHead';
 
 /**
  * @description For each element in the <code>rows</code> array, a <code>&#60;tbody&#62;</code> element containing a <code>&#60;TableRow&#62;</code> component is rendered.
@@ -23,7 +23,7 @@ class Table extends Component {
                 <TableHead columnNames={columnNames}/>
                 <TableBody
                     rows={rows}
-                    headerColumn={headerColumn || "id"}
+                    headerColumn={headerColumn || 'id'}
                     {...args}
                 />
             </table>

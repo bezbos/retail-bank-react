@@ -1,9 +1,9 @@
-import {apiUrl, apiVersion} from "../../config.json";
+import {apiUrl, apiVersion} from '../../config.json';
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import http from "../httpService";
+import http from '../httpService';
 
 /**
  * Retrieves a range of bank accounts from an API endpoint.
@@ -11,7 +11,7 @@ import http from "../httpService";
  * @returns {Promise<*>}
  */
 export async function getBankAccountsRange(pageIndex = 0) {
-    return await http.get(apiUrl + apiVersion + "/bankAccounts/" + pageIndex);
+    return await http.get(apiUrl + apiVersion + '/bankAccounts/' + pageIndex);
 }
 
 /**
@@ -20,7 +20,7 @@ export async function getBankAccountsRange(pageIndex = 0) {
  * @returns {Promise<*>}
  */
 export async function getBankAccount(id) {
-    return await http.get(apiUrl + apiVersion + "/bankAccount/" + id);
+    return await http.get(apiUrl + apiVersion + '/bankAccount/' + id);
 }
 
 /**
@@ -29,7 +29,7 @@ export async function getBankAccount(id) {
  * @returns {Promise<*>}
  */
 export async function getBankAccountByDetails(details) {
-    return await http.get(apiUrl + apiVersion + "/bankAccount?details=" + details);
+    return await http.get(apiUrl + apiVersion + '/bankAccount?details=' + details);
 }
 
 /**
@@ -38,7 +38,7 @@ export async function getBankAccountByDetails(details) {
  * @returns {Promise<*>}
  */
 export async function getBankAccountsByDetails(details) {
-    return await http.get(apiUrl + apiVersion + "/bankAccounts?details=" + details);
+    return await http.get(apiUrl + apiVersion + '/bankAccounts?details=' + details);
 }
 
 /**
@@ -47,7 +47,7 @@ export async function getBankAccountsByDetails(details) {
  * @returns {Promise<*>}
  */
 export async function addBankAccount(bankAccount) {
-    return await http.post(apiUrl + apiVersion + "/bankAccount", bankAccount);
+    return await http.post(apiUrl + apiVersion + '/bankAccount', bankAccount);
 }
 
 /**
@@ -56,7 +56,7 @@ export async function addBankAccount(bankAccount) {
  * @returns {Promise<*>}
  */
 export async function updateBankAccount(bankAccount) {
-    return await http.put(apiUrl + apiVersion + "/bankAccount", bankAccount);
+    return await http.put(apiUrl + apiVersion + '/bankAccount', bankAccount);
 }
 
 /**
@@ -65,7 +65,7 @@ export async function updateBankAccount(bankAccount) {
  * @returns {Promise<*>}
  */
 export async function deleteBankAccount(id) {
-    return await http.delete(apiUrl + apiVersion + "/bankAccount/" + id);
+    return await http.delete(apiUrl + apiVersion + '/bankAccount/' + id);
 }
 
 export default {

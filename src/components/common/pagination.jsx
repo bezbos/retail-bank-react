@@ -20,7 +20,7 @@ class Pagination extends Component {
         return (
             <nav>
                 <ul className="pagination pagination-center">
-                    <li className={`page-item ${previousPage === null ? "disabled" : ""}`}>
+                    <li className={`page-item ${previousPage === null ? 'disabled' : ''}`}>
                         <button className="page-link" onClick={() => onPagination(previousPage)}>Previous</button>
                     </li>
                     <li className="page-item">
@@ -38,7 +38,7 @@ class Pagination extends Component {
                         }
                     </li>
                     <li className="page-item active">
-                        <button className="page-link">{currentPage || "0"}</button>
+                        <button className="page-link">{currentPage || '0'}</button>
                     </li>
                     <li className="page-item">
                         {(currentPage + 1) <= pageCount && nextPage !== null
@@ -54,7 +54,7 @@ class Pagination extends Component {
                             : null
                         }
                     </li>
-                    <li className={`page-item ${nextPage === null || nextPage > pageCount ? "disabled" : ""}`}>
+                    <li className={`page-item ${nextPage === null || nextPage > pageCount ? 'disabled' : ''}`}>
                         <button className="page-link" onClick={() => onPagination(nextPage)}>Next</button>
                     </li>
                 </ul>

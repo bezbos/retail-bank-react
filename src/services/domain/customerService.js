@@ -1,9 +1,9 @@
-import {apiUrl, apiVersion} from "../../config.json";
+import {apiUrl, apiVersion} from '../../config.json';
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import http from "../httpService";
+import http from '../httpService';
 
 /**
  * Retrieves a range of customers from an API endpoint.
@@ -11,7 +11,7 @@ import http from "../httpService";
  * @returns {Promise<*>}
  */
 export async function getCustomersRange(pageIndex = 0) {
-    return await http.get(apiUrl + apiVersion + "/customers/" + pageIndex);
+    return await http.get(apiUrl + apiVersion + '/customers/' + pageIndex);
 }
 
 /**
@@ -20,7 +20,7 @@ export async function getCustomersRange(pageIndex = 0) {
  * @returns {Promise<*>}
  */
 export async function getCustomer(id) {
-    return await http.get(apiUrl + apiVersion + "/customer/" + id);
+    return await http.get(apiUrl + apiVersion + '/customer/' + id);
 }
 
 /**
@@ -29,7 +29,7 @@ export async function getCustomer(id) {
  * @returns {Promise<*>}
  */
 export async function getCustomerByPersonalDetails(personalDetails) {
-    return await http.get(apiUrl + apiVersion + "/customer?personalDetails=" + personalDetails);
+    return await http.get(apiUrl + apiVersion + '/customer?personalDetails=' + personalDetails);
 }
 
 /**
@@ -38,7 +38,7 @@ export async function getCustomerByPersonalDetails(personalDetails) {
  * @returns {Promise<*>}
  */
 export async function getCustomersByPersonalDetails(personalDetails) {
-    return await http.get(apiUrl + apiVersion + "/customers?personalDetails=" + personalDetails);
+    return await http.get(apiUrl + apiVersion + '/customers?personalDetails=' + personalDetails);
 }
 
 /**
@@ -47,7 +47,7 @@ export async function getCustomersByPersonalDetails(personalDetails) {
  * @returns {Promise<*>}
  */
 export async function addCustomer(customer) {
-    return await http.post(apiUrl + apiVersion + "/customer", customer);
+    return await http.post(apiUrl + apiVersion + '/customer', customer);
 }
 
 /**
@@ -56,7 +56,7 @@ export async function addCustomer(customer) {
  * @returns {Promise<*>}
  */
 export async function updateCustomer(customer) {
-    return await http.put(apiUrl + apiVersion + "/customer", customer);
+    return await http.put(apiUrl + apiVersion + '/customer', customer);
 }
 
 /**
@@ -65,7 +65,7 @@ export async function updateCustomer(customer) {
  * @returns {Promise<*>}
  */
 export async function deleteCustomer(id) {
-    return await http.delete(apiUrl + apiVersion + "/customer/" + id);
+    return await http.delete(apiUrl + apiVersion + '/customer/' + id);
 }
 
 export default {

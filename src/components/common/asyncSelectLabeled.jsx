@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AsyncSelect from "react-select/lib/Async";
+import AsyncSelect from 'react-select/lib/Async';
 
 class AsyncSelectLabeled extends Component {
     render() {

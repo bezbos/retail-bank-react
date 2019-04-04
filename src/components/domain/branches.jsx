@@ -3,14 +3,14 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import {toast} from "react-toastify";
-import authService from "../../services/authService";
-import branchService from "../../services/domain/branchService";
-import exceptions from "../../utils/exceptions";
-import Card from "../common/card";
-import Pagination from "../common/pagination";
-import Table from "../common/table";
+import {Link} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import authService from '../../services/authService';
+import branchService from '../../services/domain/branchService';
+import exceptions from '../../utils/exceptions';
+import Card from '../common/card';
+import Pagination from '../common/pagination';
+import Table from '../common/table';
 
 /**
  * @description Domain specific component that renders a table of Branches
@@ -45,7 +45,7 @@ class Branches extends Component {
 
         await branchService.deleteBranch(id)
             .then(async () => {
-                toast.success("Deleted successfully.");
+                toast.success('Deleted successfully.');
 
                 if (filteredBranches.length === 0) await this.getBranchesRangeAndUpdateState();
             })
@@ -132,10 +132,10 @@ class Branches extends Component {
             <div className="row">
                 <div className="col-12">
                     <Card
-                        title={`Branches table (${decoratedBranches.length} ${decoratedBranches.length === 1 ? "entry" : "entries"})`}>
+                        title={`Branches table (${decoratedBranches.length} ${decoratedBranches.length === 1 ? 'entry' : 'entries'})`}>
                         {isAdmin && <Link className="btn btn-primary mb-3" to={`/branch/new`}>Create new</Link>}
                         <Table
-                            columnNames={["ID", "Details", "Address", "Bank", "Type", isAdmin ? "Action" : ""]}
+                            columnNames={['ID', 'Details', 'Address', 'Bank', 'Type', isAdmin ? 'Action' : '']}
                             rows={decoratedBranches}
                         />
                         <Pagination

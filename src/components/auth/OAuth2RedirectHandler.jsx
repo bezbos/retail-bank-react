@@ -3,8 +3,8 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import React, {Component} from 'react';
-import {Redirect} from "react-router-dom";
-import authService from "../../services/authService";
+import {Redirect} from 'react-router-dom';
+import authService from '../../services/authService';
 
 /**
  * @description OAuth2 handler component.
@@ -25,14 +25,12 @@ class OAuth2RedirectHandler extends Component {
     };
 
     render() {
-        const jwtToken = this.getUrlParameter("token");
-        const error = this.getUrlParameter("error");
-
-        console.log("OAuth2RedirectHandler.render: ", jwtToken);
+        const jwtToken = this.getUrlParameter('token');
+        const error = this.getUrlParameter('error');
 
         if (jwtToken) {
             authService.oauthLogin(jwtToken);
-            window.location = "/";
+            window.location = '/';
         }
 
         console.error(error);

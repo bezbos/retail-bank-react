@@ -3,14 +3,14 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import {toast} from "react-toastify";
-import authService from "../../services/authService";
-import bankService, {getBanksRange} from "../../services/domain/bankService";
-import exceptions from "../../utils/exceptions";
-import Card from "../common/card";
-import Pagination from "../common/pagination";
-import Table from "../common/table";
+import {Link} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import authService from '../../services/authService';
+import bankService, {getBanksRange} from '../../services/domain/bankService';
+import exceptions from '../../utils/exceptions';
+import Card from '../common/card';
+import Pagination from '../common/pagination';
+import Table from '../common/table';
 
 /**
  * @description Domain specific component that renders a table of Banks
@@ -45,7 +45,7 @@ class Banks extends Component {
 
         await bankService.deleteBank(id)
             .then(async () => {
-                toast.success("Deleted successfully.");
+                toast.success('Deleted successfully.');
 
                 if (banks.length === 0)
                     await this.getBanksRangeAndUpdateState();
@@ -118,10 +118,10 @@ class Banks extends Component {
             <div className="row">
                 <div className="col-12">
                     <Card
-                        title={`Banks table (${decoratedBanks.length} ${decoratedBanks.length === 1 ? "entry" : "entries"})`}>
+                        title={`Banks table (${decoratedBanks.length} ${decoratedBanks.length === 1 ? 'entry' : 'entries'})`}>
                         {isAdmin && <Link className="btn btn-primary mb-3" to={`/bank/new`}>Create new</Link>}
                         <Table
-                            columnNames={["ID", "Details", isAdmin ? "Action" : ""]}
+                            columnNames={['ID', 'Details', isAdmin ? 'Action' : '']}
                             rows={decoratedBanks}
                         />
                         <Pagination

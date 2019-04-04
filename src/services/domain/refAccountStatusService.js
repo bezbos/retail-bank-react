@@ -2,15 +2,15 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import {apiUrl, apiVersion} from "../../config.json";
-import http from "../httpService";
+import {apiUrl, apiVersion} from '../../config.json';
+import http from '../httpService';
 
 /**
  * Retrieves all account statuses from an API endpoint.
  * @returns {Promise<*>}
  */
 export async function getRefAccountStatuses() {
-    return await http.get(apiUrl + apiVersion + "/refAccountStatuses/");
+    return await http.get(apiUrl + apiVersion + '/refAccountStatuses/');
 }
 
 /**
@@ -19,7 +19,7 @@ export async function getRefAccountStatuses() {
  * @returns {Promise<*>}
  */
 export async function getRefAccountStatus(id) {
-    return await http.get(apiUrl + apiVersion + "/refAccountStatus/" + id);
+    return await http.get(apiUrl + apiVersion + '/refAccountStatus/' + id);
 }
 
 /**
@@ -28,7 +28,7 @@ export async function getRefAccountStatus(id) {
  * @returns {Promise<*>}
  */
 export async function getRefAccountStatusByCode(code) {
-    return await http.get(apiUrl + apiVersion + "/refAccountStatus?code=" + code);
+    return await http.get(apiUrl + apiVersion + '/refAccountStatus?code=' + code);
 }
 
 /**
@@ -37,7 +37,7 @@ export async function getRefAccountStatusByCode(code) {
  * @returns {Promise<*>}
  */
 export async function addRefAccountStatus(refAccountStatus) {
-    return await http.post(apiUrl + apiVersion + "/refAccountStatus", refAccountStatus);
+    return await http.post(apiUrl + apiVersion + '/refAccountStatus', refAccountStatus);
 }
 
 /**
@@ -46,7 +46,7 @@ export async function addRefAccountStatus(refAccountStatus) {
  * @returns {Promise<*>}
  */
 export async function updateRefAccountStatus(refAccountStatus) {
-    return await http.put(apiUrl + apiVersion + "/refAccountStatus", refAccountStatus);
+    return await http.put(apiUrl + apiVersion + '/refAccountStatus', refAccountStatus);
 }
 
 /**
@@ -55,7 +55,7 @@ export async function updateRefAccountStatus(refAccountStatus) {
  * @returns {Promise<*>}
  */
 export async function deleteRefAccountStatus(id) {
-    return await http.delete(apiUrl + apiVersion + "/refAccountStatus/" + id);
+    return await http.delete(apiUrl + apiVersion + '/refAccountStatus/' + id);
 }
 
 export default {

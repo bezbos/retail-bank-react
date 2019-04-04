@@ -3,12 +3,12 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import authService from "../../services/authService";
-import customerService from "../../services/domain/customerService";
-import Card from "../common/card";
-import Pagination from "../common/pagination";
-import Table from "../common/table";
+import {Link} from 'react-router-dom';
+import authService from '../../services/authService';
+import customerService from '../../services/domain/customerService';
+import Card from '../common/card';
+import Pagination from '../common/pagination';
+import Table from '../common/table';
 
 /**
  * @description Domain specific component that renders a table of Customers
@@ -93,10 +93,10 @@ class Customers extends Component {
             <div className="row">
                 <div className="col-12">
                     <Card
-                        title={`Customers table (${decoratedCustomer.length} ${decoratedCustomer.length === 1 ? "entry" : "entries"})`}>
+                        title={`Customers table (${decoratedCustomer.length} ${decoratedCustomer.length === 1 ? 'entry' : 'entries'})`}>
                         {isAdmin && <Link className="btn btn-primary mb-3" to={`/customer/new`}>Create new</Link>}
                         <Table
-                            columnNames={["ID", "Address", "Branch", "Personal Details", "Contact Details", isAdmin ? "Action" : ""]}
+                            columnNames={['ID', 'Address', 'Branch', 'Personal Details', 'Contact Details', isAdmin ? 'Action' : '']}
                             rows={decoratedCustomer}
                         />
                         <Pagination

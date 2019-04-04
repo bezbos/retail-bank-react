@@ -1,9 +1,9 @@
-import {apiUrl, apiVersion} from "../../config.json";
+import {apiUrl, apiVersion} from '../../config.json';
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import http from "../httpService";
+import http from '../httpService';
 
 /**
  * Retrieves a range of branches from an API endpoint.
@@ -11,7 +11,7 @@ import http from "../httpService";
  * @returns {Promise<*>}
  */
 export async function getBranchesRange(pageIndex = 0) {
-    return await http.get(apiUrl + apiVersion + "/branches/" + pageIndex);
+    return await http.get(apiUrl + apiVersion + '/branches/' + pageIndex);
 }
 
 /**
@@ -20,7 +20,7 @@ export async function getBranchesRange(pageIndex = 0) {
  * @returns {Promise<*>}
  */
 export async function getBranch(id) {
-    return await http.get(apiUrl + apiVersion + "/branch/" + id);
+    return await http.get(apiUrl + apiVersion + '/branch/' + id);
 }
 
 /**
@@ -29,7 +29,7 @@ export async function getBranch(id) {
  * @returns {Promise<*>}
  */
 export async function getBranchByDetails(details) {
-    return await http.get(apiUrl + apiVersion + "/branch?details=" + details);
+    return await http.get(apiUrl + apiVersion + '/branch?details=' + details);
 }
 
 /**
@@ -38,7 +38,7 @@ export async function getBranchByDetails(details) {
  * @returns {Promise<*>}
  */
 export async function getBranchesByDetails(details) {
-    return await http.get(apiUrl + apiVersion + "/branches?details=" + details);
+    return await http.get(apiUrl + apiVersion + '/branches?details=' + details);
 }
 
 /**
@@ -47,7 +47,7 @@ export async function getBranchesByDetails(details) {
  * @returns {Promise<*>}
  */
 export async function addBranch(branch) {
-    return await http.post(apiUrl + apiVersion + "/branch", branch);
+    return await http.post(apiUrl + apiVersion + '/branch', branch);
 }
 
 /**
@@ -56,7 +56,7 @@ export async function addBranch(branch) {
  * @returns {Promise<*>}
  */
 export async function updateBranch(branch) {
-    return await http.put(apiUrl + apiVersion + "/branch", branch);
+    return await http.put(apiUrl + apiVersion + '/branch', branch);
 }
 
 /**
@@ -65,7 +65,7 @@ export async function updateBranch(branch) {
  * @returns {Promise<*>}
  */
 export async function deleteBranch(id) {
-    return await http.delete(apiUrl + apiVersion + "/branch/" + id);
+    return await http.delete(apiUrl + apiVersion + '/branch/' + id);
 }
 
 export default {

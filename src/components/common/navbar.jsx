@@ -10,10 +10,10 @@ import {
     faIdCard,
     faUniversity,
     faUsers
-} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import React, {Component} from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 
 /**
  * @description Navigation bar component.
@@ -45,7 +45,7 @@ class Navbar extends Component {
                             <FontAwesomeIcon icon={faUsers}/> Customers
                         </NavLink>
                         {user &&
-                        (user.roles ? user.roles.includes("ROLE_ADMIN") : false) &&
+                        (user.roles ? user.roles.includes('ROLE_ADMIN') : false) &&
                         <NavLink to="/transactions" className="nav-item nav-link">
                             <FontAwesomeIcon icon={faExchangeAlt}/> Transactions
                         </NavLink>}

@@ -4,14 +4,14 @@
  */
 
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import {toast} from "react-toastify";
-import authService from "../../services/authService";
-import addressService, {getAddressesRange} from "../../services/domain/addressService";
-import exceptions from "../../utils/exceptions";
-import Card from "../common/card";
-import Pagination from "../common/pagination";
-import Table from "../common/table";
+import {Link} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import authService from '../../services/authService';
+import addressService, {getAddressesRange} from '../../services/domain/addressService';
+import exceptions from '../../utils/exceptions';
+import Card from '../common/card';
+import Pagination from '../common/pagination';
+import Table from '../common/table';
 
 /**
  * @description Domain specific component that renders a table of Addresses
@@ -48,7 +48,7 @@ class Addresses extends Component {
 
         await addressService.deleteAddress(id)
             .then(async () => {
-                toast.success("Deleted successfully.");
+                toast.success('Deleted successfully.');
                 if (filteredAddresses.length === 0) await this.getAddressesRangeAndUpdateState();
             })
             .catch(ex => {
@@ -130,10 +130,10 @@ class Addresses extends Component {
             <div className="row">
                 <div className="col-12">
                     <Card
-                        title={`Addresses table (${decoratedAddresses.length} ${decoratedAddresses.length === 1 ? "entry" : "entries"})`}>
+                        title={`Addresses table (${decoratedAddresses.length} ${decoratedAddresses.length === 1 ? 'entry' : 'entries'})`}>
                         {isAdmin && <Link className="btn btn-primary mb-3" to={`/address/new`}>Create new</Link>}
                         <Table
-                            columnNames={["ID", "Line 1", "Line 2", "Zip Postcode", "State Province Country", "Country", "Other Details", isAdmin ? "Action" : ""]}
+                            columnNames={['ID', 'Line 1', 'Line 2', 'Zip Postcode', 'State Province Country', 'Country', 'Other Details', isAdmin ? 'Action' : '']}
                             rows={decoratedAddresses}
                         />
                         <Pagination

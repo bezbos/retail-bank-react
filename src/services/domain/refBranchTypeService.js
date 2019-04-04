@@ -1,16 +1,16 @@
-import {apiUrl, apiVersion} from "../../config.json";
+import {apiUrl, apiVersion} from '../../config.json';
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import http from "../httpService";
+import http from '../httpService';
 
 /**
  * Retrieves all branch types from an API endpoint.
  * @returns {Promise<*>}
  */
 export async function getRefBranchTypes() {
-    return await http.get(apiUrl + apiVersion + "/refBranchTypes/");
+    return await http.get(apiUrl + apiVersion + '/refBranchTypes/');
 }
 
 /**
@@ -19,7 +19,7 @@ export async function getRefBranchTypes() {
  * @returns {Promise<*>}
  */
 export async function getRefBranchType(id) {
-    return await http.get(apiUrl + apiVersion + "/refBranchType/" + id);
+    return await http.get(apiUrl + apiVersion + '/refBranchType/' + id);
 }
 
 /**
@@ -28,7 +28,7 @@ export async function getRefBranchType(id) {
  * @returns {Promise<*>}
  */
 export async function getRefBranchTypeByCode(code) {
-    return await http.get(apiUrl + apiVersion + "/refBranchType?code=" + code);
+    return await http.get(apiUrl + apiVersion + '/refBranchType?code=' + code);
 }
 
 /**
@@ -37,7 +37,7 @@ export async function getRefBranchTypeByCode(code) {
  * @returns {Promise<*>}
  */
 export async function addRefBranchType(refBranchType) {
-    return await http.post(apiUrl + apiVersion + "/refBranchType", refBranchType);
+    return await http.post(apiUrl + apiVersion + '/refBranchType', refBranchType);
 }
 
 /**
@@ -46,7 +46,7 @@ export async function addRefBranchType(refBranchType) {
  * @returns {Promise<*>}
  */
 export async function updateRefBranchType(refBranchType) {
-    return await http.put(apiUrl + apiVersion + "/refBranchType", refBranchType);
+    return await http.put(apiUrl + apiVersion + '/refBranchType', refBranchType);
 }
 
 /**
@@ -55,7 +55,7 @@ export async function updateRefBranchType(refBranchType) {
  * @returns {Promise<*>}
  */
 export async function deleteRefBranchType(id) {
-    return await http.delete(apiUrl + apiVersion + "/refBranchType/" + id);
+    return await http.delete(apiUrl + apiVersion + '/refBranchType/' + id);
 }
 
 export default {

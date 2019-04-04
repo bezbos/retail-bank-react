@@ -2,17 +2,17 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import _ from "lodash";
+import _ from 'lodash';
 import React, {Component} from 'react';
-import {toast} from "react-toastify";
-import bankAccountService from "../../services/domain/bankAccountService";
-import merchantService from "../../services/domain/merchantService";
-import refTransactionTypeService from "../../services/domain/refTransactionTypeService";
-import transactionService from "../../services/domain/transactionService";
-import exceptions from "../../utils/exceptions";
-import AsyncSelectLabeled from "../common/asyncSelectLabeled";
-import Card from "../common/card";
-import Input from "../common/input";
+import {toast} from 'react-toastify';
+import bankAccountService from '../../services/domain/bankAccountService';
+import merchantService from '../../services/domain/merchantService';
+import refTransactionTypeService from '../../services/domain/refTransactionTypeService';
+import transactionService from '../../services/domain/transactionService';
+import exceptions from '../../utils/exceptions';
+import AsyncSelectLabeled from '../common/asyncSelectLabeled';
+import Card from '../common/card';
+import Input from '../common/input';
 
 /**
  * @description Domain specific component for taking <b>Bank</b> related input.
@@ -21,28 +21,28 @@ class TransactionForm extends Component {
 
     //region Properties
     // We check if the query string "id" is TRUTHY and it DOESN'T match to "new" to determine if the item exists.
-    isExistingTransaction = this.props.match.params["id"] && this.props.match.params["id"] !== "new";
+    isExistingTransaction = this.props.match.params['id'] && this.props.match.params['id'] !== 'new';
     state = {
         transaction: {
-            id: "",
+            id: '',
             senderAccount: {
-                id: "",
-                details: ""
+                id: '',
+                details: ''
             },
             receiverAccount: {
-                id: "",
-                details: ""
+                id: '',
+                details: ''
             },
             merchant: {
-                id: "",
-                details: ""
+                id: '',
+                details: ''
             },
             type: {
-                id: "",
-                code: ""
+                id: '',
+                code: ''
             },
-            amount: "",
-            details: ""
+            amount: '',
+            details: ''
         },
         senders: [],
         receivers: [],
@@ -56,7 +56,7 @@ class TransactionForm extends Component {
         const {params} = this.props.match;
 
         if (this.isExistingTransaction) {
-            const {data: transaction} = await transactionService.getTransaction(params["id"]);
+            const {data: transaction} = await transactionService.getTransaction(params['id']);
             this.setState({transaction})
         }
     }
@@ -74,9 +74,9 @@ class TransactionForm extends Component {
             return;
         }
 
-        this.props.history.push("/transactions");
+        this.props.history.push('/transactions');
 
-        this.isExistingBank && toast.success("Added successfully!");
+        this.isExistingBank && toast.success('Added successfully!');
     };
 
     handleChange = ({currentTarget: input}) => {
@@ -90,21 +90,21 @@ class TransactionForm extends Component {
         const transaction = {...this.state.transaction};
 
         switch (inputName) {
-            case "senderAccount":
-                _.set(transaction, "senderAccount.id", value);
-                _.set(transaction, "senderAccount.details", label);
+            case 'senderAccount':
+                _.set(transaction, 'senderAccount.id', value);
+                _.set(transaction, 'senderAccount.details', label);
                 break;
-            case"receiverAccount":
-                _.set(transaction, "receiverAccount.id", value);
-                _.set(transaction, "receiverAccount.details", label);
+            case'receiverAccount':
+                _.set(transaction, 'receiverAccount.id', value);
+                _.set(transaction, 'receiverAccount.details', label);
                 break;
-            case"merchant":
-                _.set(transaction, "merchant.id", value);
-                _.set(transaction, "merchant.details", label);
+            case'merchant':
+                _.set(transaction, 'merchant.id', value);
+                _.set(transaction, 'merchant.details', label);
                 break;
-            case"type":
-                _.set(transaction, "type.id", value);
-                _.set(transaction, "type.code", label);
+            case'type':
+                _.set(transaction, 'type.id', value);
+                _.set(transaction, 'type.code', label);
                 break;
             default:
                 break;

@@ -2,17 +2,17 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import _ from "lodash";
+import _ from 'lodash';
 import React, {Component} from 'react';
-import AsyncSelect from "react-select/lib/Async";
-import {toast} from "react-toastify";
-import addressService from "../../services/domain/addressService";
-import bankService from "../../services/domain/bankService";
-import branchService from "../../services/domain/branchService";
-import refBranchTypeService from "../../services/domain/refBranchTypeService";
-import exceptions from "../../utils/exceptions";
-import Card from "../common/card";
-import Input from "../common/input";
+import AsyncSelect from 'react-select/lib/Async';
+import {toast} from 'react-toastify';
+import addressService from '../../services/domain/addressService';
+import bankService from '../../services/domain/bankService';
+import branchService from '../../services/domain/branchService';
+import refBranchTypeService from '../../services/domain/refBranchTypeService';
+import exceptions from '../../utils/exceptions';
+import Card from '../common/card';
+import Input from '../common/input';
 
 /**
  * @description Domain specific component for taking <b>Branch</b> related input.
@@ -21,22 +21,22 @@ class BranchesForm extends Component {
 
     //region Properties
     // We check if the query string "id" is TRUTHY and it DOESN'T match to "new" to determine if the item exists.
-    isExistingBranch = this.props.match.params["id"] && this.props.match.params["id"] !== "new";
+    isExistingBranch = this.props.match.params['id'] && this.props.match.params['id'] !== 'new';
     state = {
         branch: {
-            id: "",
-            details: "",
+            id: '',
+            details: '',
             address: {
-                id: "",
-                line1: ""
+                id: '',
+                line1: ''
             },
             bank: {
-                id: "",
-                details: ""
+                id: '',
+                details: ''
             },
             type: {
-                id: "",
-                code: ""
+                id: '',
+                code: ''
             }
         },
         addresses: [],
@@ -50,7 +50,7 @@ class BranchesForm extends Component {
         const {params} = this.props.match;
 
         if (this.isExistingBranch) {
-            const {data} = await branchService.getBranch(params["id"]);
+            const {data} = await branchService.getBranch(params['id']);
             this.setState({branch: this.mapBranchDataToViewModel(data)})
         }
     }
@@ -71,10 +71,10 @@ class BranchesForm extends Component {
             return;
         }
 
-        this.props.history.push("/branches");
+        this.props.history.push('/branches');
         this.isExistingBranch
-            ? toast.success("Updated successfully!")
-            : toast.success("Added successfully!");
+            ? toast.success('Updated successfully!')
+            : toast.success('Added successfully!');
     };
 
     handleChange = ({currentTarget: input}) => {
@@ -88,17 +88,17 @@ class BranchesForm extends Component {
         const branch = {...this.state.branch};
 
         switch (inputName) {
-            case "address":
-                _.set(branch, "address.id", value);
-                _.set(branch, "address.line1", label);
+            case 'address':
+                _.set(branch, 'address.id', value);
+                _.set(branch, 'address.line1', label);
                 break;
-            case"bank":
-                _.set(branch, "bank.id", value);
-                _.set(branch, "bank.details", label);
+            case'bank':
+                _.set(branch, 'bank.id', value);
+                _.set(branch, 'bank.details', label);
                 break;
-            case"type":
-                _.set(branch, "type.id", value);
-                _.set(branch, "type.code", label);
+            case'type':
+                _.set(branch, 'type.id', value);
+                _.set(branch, 'type.code', label);
                 break;
             default:
                 break;

@@ -3,11 +3,11 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import React, {Component} from 'react';
-import {toast} from "react-toastify";
-import bankService from "../../services/domain/bankService";
-import exceptions from "../../utils/exceptions";
-import Card from "../common/card";
-import Input from "../common/input";
+import {toast} from 'react-toastify';
+import bankService from '../../services/domain/bankService';
+import exceptions from '../../utils/exceptions';
+import Card from '../common/card';
+import Input from '../common/input';
 
 /**
  * @description Domain specific component for taking <b>Bank</b> related input.
@@ -16,9 +16,9 @@ class BankForm extends Component {
 
     //region Properties
     // We check if the query string "id" is TRUTHY and it DOESN'T match to "new" to determine if the item exists.
-    isExistingBank = this.props.match.params["id"] && this.props.match.params["id"] !== "new";
+    isExistingBank = this.props.match.params['id'] && this.props.match.params['id'] !== 'new';
     state = {
-        bank: {id: "", details: ""}
+        bank: {id: '', details: ''}
     };
     //endregion
 
@@ -27,7 +27,7 @@ class BankForm extends Component {
         const {params} = this.props.match;
 
         if (this.isExistingBank) {
-            const {data: bank} = await bankService.getBank(params["id"]);
+            const {data: bank} = await bankService.getBank(params['id']);
             this.setState({bank})
         }
     }
@@ -47,11 +47,11 @@ class BankForm extends Component {
             return;
         }
 
-        this.props.history.push("/banks");
+        this.props.history.push('/banks');
 
         this.isExistingBank
-            ? toast.success("Updated successfully!")
-            : toast.success("Added successfully!");
+            ? toast.success('Updated successfully!')
+            : toast.success('Added successfully!');
     };
 
     handleChange = ({currentTarget: input}) => {

@@ -3,12 +3,12 @@
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import authService from "../../services/authService";
-import bankAccountService from "../../services/domain/bankAccountService";
-import Card from "../common/card";
-import Pagination from "../common/pagination";
-import Table from "../common/table";
+import {Link} from 'react-router-dom';
+import authService from '../../services/authService';
+import bankAccountService from '../../services/domain/bankAccountService';
+import Card from '../common/card';
+import Pagination from '../common/pagination';
+import Table from '../common/table';
 
 /**
  * @description Domain specific component that renders a table of Bank Accounts
@@ -101,10 +101,10 @@ class BankAccounts extends Component {
             <div className="row">
                 <div className="col-12">
                     <Card
-                        title={`Bank Accounts table (${decoratedBankAccounts.length} ${decoratedBankAccounts.length === 1 ? "entry" : "entries"})`}>
+                        title={`Bank Accounts table (${decoratedBankAccounts.length} ${decoratedBankAccounts.length === 1 ? 'entry' : 'entries'})`}>
                         {isAdmin && <Link className="btn btn-primary mb-3" to={`/bankAccount/new`}>Create new</Link>}
                         <Table
-                            columnNames={["ID", "Customer", "Balance", "Type", "Status", "Details", isAdmin ? "Action" : ""]}
+                            columnNames={['ID', 'Customer', 'Balance', 'Type', 'Status', 'Details', isAdmin ? 'Action' : '']}
                             rows={decoratedBankAccounts}
                         />
                         <Pagination

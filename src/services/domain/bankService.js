@@ -1,9 +1,9 @@
-import {apiUrl, apiVersion} from "../../config.json";
+import {apiUrl, apiVersion} from '../../config.json';
 /**
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import http from "../httpService";
+import http from '../httpService';
 
 /**
  * Retrieves a range of banks from an API endpoint.
@@ -11,7 +11,7 @@ import http from "../httpService";
  * @returns {Promise<*>}
  */
 export async function getBanksRange(pageIndex = 0) {
-    return await http.get(apiUrl + apiVersion + "/banks/" + pageIndex);
+    return await http.get(apiUrl + apiVersion + '/banks/' + pageIndex);
 }
 
 /**
@@ -20,7 +20,7 @@ export async function getBanksRange(pageIndex = 0) {
  * @returns {Promise<*>}
  */
 export async function getBank(id) {
-    return await http.get(apiUrl + apiVersion + "/bank/" + id);
+    return await http.get(apiUrl + apiVersion + '/bank/' + id);
 }
 
 /**
@@ -29,7 +29,7 @@ export async function getBank(id) {
  * @returns {Promise<*>}
  */
 export async function getBankByDetails(details) {
-    return await http.get(apiUrl + apiVersion + "/bank?details=" + details);
+    return await http.get(apiUrl + apiVersion + '/bank?details=' + details);
 }
 
 /**
@@ -38,7 +38,7 @@ export async function getBankByDetails(details) {
  * @returns {Promise<*>}
  */
 export async function getBanksByDetails(details) {
-    return await http.get(apiUrl + apiVersion + "/banks?details=" + details);
+    return await http.get(apiUrl + apiVersion + '/banks?details=' + details);
 }
 
 /**
@@ -47,7 +47,7 @@ export async function getBanksByDetails(details) {
  * @returns {Promise<*>}
  */
 export async function addBank(bank) {
-    return await http.post(apiUrl + apiVersion + "/bank", bank);
+    return await http.post(apiUrl + apiVersion + '/bank', bank);
 }
 
 /**
@@ -56,7 +56,7 @@ export async function addBank(bank) {
  * @returns {Promise<*>}
  */
 export async function updateBank(bank) {
-    return await http.put(apiUrl + apiVersion + "/bank", bank);
+    return await http.put(apiUrl + apiVersion + '/bank', bank);
 }
 
 /**
@@ -65,7 +65,7 @@ export async function updateBank(bank) {
  * @returns {Promise<*>}
  */
 export async function deleteBank(id) {
-    return await http.delete(apiUrl + apiVersion + "/bank/" + id);
+    return await http.delete(apiUrl + apiVersion + '/bank/' + id);
 }
 
 export default {

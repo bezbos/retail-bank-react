@@ -4,14 +4,14 @@
  */
 
 import React, {Component} from 'react';
-import Card from "react-bootstrap/Card";
-import Carousel from "react-bootstrap/Carousel";
-import CarouselItem from "react-bootstrap/CarouselItem";
-import creditCardsImage from "../../images/credit_cards.png";
-import confidenceImage from "../../images/fallout_mascot.png";
-import mortgageHelpImage from "../../images/iconfinder_18_3319626.png";
-import educationHatImage from "../../images/iconfinder_Education_3069198.png";
-import safetyImage from "../../images/iconfinder_safety__protection__shield__privacy_2537346.png";
+import Card from 'react-bootstrap/Card';
+import Carousel from 'react-bootstrap/Carousel';
+import CarouselItem from 'react-bootstrap/CarouselItem';
+import creditCardsImage from '../../images/credit_cards.png';
+import confidenceImage from '../../images/fallout_mascot.png';
+import mortgageHelpImage from '../../images/iconfinder_18_3319626.png';
+import educationHatImage from '../../images/iconfinder_Education_3069198.png';
+import safetyImage from '../../images/iconfinder_safety__protection__shield__privacy_2537346.png';
 
 /**
  * @description Homepage component.

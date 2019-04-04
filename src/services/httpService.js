@@ -2,8 +2,8 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import axios from "axios";
-import {toast} from "react-toastify";
+import axios from 'axios';
+import {toast} from 'react-toastify';
 
 // Fallback that handles any error code responses by displaying a toast message.
 axios.interceptors.response.use(null, error => {
@@ -13,7 +13,7 @@ axios.interceptors.response.use(null, error => {
         error.response.status < 500;
 
     if (!expectedError)
-        toast.error("An unexpected error occurred.");
+        toast.error('An unexpected error occurred.');
 
     return Promise.reject(error);
 });
@@ -23,7 +23,7 @@ axios.interceptors.response.use(null, error => {
  */
 export function setJwt(jwt) {
     if (jwt)
-        axios.defaults.headers.common['Authorization'] = "Bearer " + jwt;
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + jwt;
 }
 
 /**

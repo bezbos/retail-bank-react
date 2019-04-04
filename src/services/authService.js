@@ -2,12 +2,12 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import jwtDecode from "jwt-decode";
-import {apiUrl} from "../config.json";
-import http from "./httpService";
+import jwtDecode from 'jwt-decode';
+import {apiUrl} from '../config.json';
+import http from './httpService';
 
-const apiEndpoint = apiUrl + "/auth";
-const tokenKey = "token";
+const apiEndpoint = apiUrl + '/auth';
+const tokenKey = 'token';
 
 http.setJwt(getJwt());
 
@@ -19,7 +19,7 @@ http.setJwt(getJwt());
  * @returns {Promise<void>}
  */
 export async function login(usernameOrEmail, password) {
-    const {data} = await http.post(apiEndpoint + "/signin", {usernameOrEmail, password});
+    const {data} = await http.post(apiEndpoint + '/signin', {usernameOrEmail, password});
     localStorage.setItem(tokenKey, data.accessToken);
 }
 
@@ -37,7 +37,7 @@ export function oauthLogin(accessToken) {
  * @returns {*}
  */
 export function register(user) {
-    return http.post(apiEndpoint + "/signup", {email: user.email, password: user.password});
+    return http.post(apiEndpoint + '/signup', {email: user.email, password: user.password});
 }
 
 /**
@@ -68,7 +68,7 @@ export function getCurrentUser() {
 export function currentUserIsAdmin() {
     try {
         const jwt = localStorage.getItem(tokenKey);
-        return jwtDecode(jwt).roles.includes("ROLE_ADMIN");
+        return jwtDecode(jwt).roles.includes('ROLE_ADMIN');
     } catch (ex) {
         return null;
     }

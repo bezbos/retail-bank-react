@@ -4,7 +4,7 @@
  */
 
 import React, {Component} from 'react';
-import {firstToLowerCase, removeWhitespace} from "../../utils/strings";
+import {firstToLowerCase, removeWhitespace} from '../../utils/strings';
 
 /**
  * @description An input component that contains the <code>&#60;input&#62;</code>, <code>&#60;label&#62;</code> and <code>&#60;small&#62;</code> elements wrapped with a <code>&#60;div class="form-group"&#62;</code> element.
@@ -17,7 +17,7 @@ import {firstToLowerCase, removeWhitespace} from "../../utils/strings";
  */
 class Input extends Component {
     render() {
-        const {value, label, name, onChange, placeholder, note, ...args} = this.props;
+        const {value, label, name, onChange, placeholder, note, error, ...args} = this.props;
 
         // We make the first character lower case and remove all whitespace.
         const propName = removeWhitespace(
@@ -26,16 +26,17 @@ class Input extends Component {
 
         return (
             <div className="form-group">
-                <label htmlFor={name || (propName + "Input")}>{label}</label>
+                <label htmlFor={name || (propName + 'Input')}>{label}</label>
                 <input value={value}
                        onChange={onChange}
-                       id={name || (propName + "Input")}
+                       id={name || (propName + 'Input')}
                        name={name || propName}
                        placeholder={placeholder || `Enter ${label.toLowerCase()}...`}
                        className="form-control"
                        {...args}
                 />
                 <small className="form-text text-muted">{note}</small>
+                {error && <div className="alert alert-danger">{error}</div>}
             </div>
         );
     }

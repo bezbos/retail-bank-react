@@ -2,7 +2,7 @@
  * @license {@link http://www.apache.org/licenses/LICENSE-2.0}
  * @author Boško Bezik <buddhacatmonk@gmail.com>
  */
-import {toast} from "react-toastify";
+import {toast} from 'react-toastify';
 
 /**
  * @description We use this function in <code>catch</code> blocks
@@ -12,12 +12,12 @@ import {toast} from "react-toastify";
  * @param customToastMessage - Optional toast messages that replace the default message.
  * @returns {void}
  */
-function showHttpException(exception, customExceptionMessage = "", customToastMessage) {
+function showHttpException(exception, customExceptionMessage = '', customToastMessage) {
 
     let _exceptionAsNumber;
 
     // We check if the exception argument is a number
-    if (typeof exception === "number") {
+    if (typeof exception === 'number') {
         _exceptionAsNumber = exception;
 
     } else {
@@ -43,40 +43,40 @@ function showHttpException(exception, customExceptionMessage = "", customToastMe
 // Then we show a user friendly toast error message.
     switch (actualExceptionStatus) {
         case 400:
-            toast.error(`${customToastMessage || "Something went wrong."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'Something went wrong.'} (${actualExceptionStatus})`);
             break;
         case 401:
-            toast.warn(`${customToastMessage || "You must login to proceed."} (${actualExceptionStatus})`);
+            toast.warn(`${customToastMessage || 'You must login to proceed.'} (${actualExceptionStatus})`);
             break;
         case 403:
-            toast.warn(`${customToastMessage || "You are not authorized to do that."} (${actualExceptionStatus})`);
+            toast.warn(`${customToastMessage || 'You are not authorized to do that.'} (${actualExceptionStatus})`);
             break;
         case 404:
-            toast.error(`${customToastMessage || "This resource could not be found."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'This resource could not be found.'} (${actualExceptionStatus})`);
             break;
         case 405:
-            toast.warn(`${customToastMessage || "That action is disabled or not allowed."} (${actualExceptionStatus})`);
+            toast.warn(`${customToastMessage || 'That action is disabled or not allowed.'} (${actualExceptionStatus})`);
             break;
         case 408:
-            toast.error(`${customToastMessage || "Request timeout."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'Request timeout.'} (${actualExceptionStatus})`);
             break;
         case 413:
-            toast.error(`${customToastMessage || "Resource too large."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'Resource too large.'} (${actualExceptionStatus})`);
             break;
         case 414:
-            toast.error(`${customToastMessage || "The URI is too long."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'The URI is too long.'} (${actualExceptionStatus})`);
             break;
         case 415:
-            toast.error(`${customToastMessage || "Unsupported media type."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'Unsupported media type.'} (${actualExceptionStatus})`);
             break;
         case 429:
-            toast.error(`${customToastMessage || "Too many requests."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'Too many requests.'} (${actualExceptionStatus})`);
             break;
         case 500:
-            toast.error(`${customToastMessage || "Internal server error."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'Internal server error.'} (${actualExceptionStatus})`);
             break;
         default:
-            toast.error(`${customToastMessage || "Something went wrong."} (${actualExceptionStatus})`);
+            toast.error(`${customToastMessage || 'Something went wrong.'} (${actualExceptionStatus})`);
             return;
     }
 }
